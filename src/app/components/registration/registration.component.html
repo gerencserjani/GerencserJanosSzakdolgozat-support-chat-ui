@@ -1,0 +1,21 @@
+
+<button mat-button color="primary" routerLink="/">Back</button>
+  <mat-card class="my-card">
+  <span>Registration</span>
+  <mat-card-content>
+    <form class="registrationForm" [formGroup]="registrationForm" >
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input  matInput id="name" formControlName="name" name="name" required>
+      </mat-form-field>
+    <br>
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input matInput id="password" formControlName="password" name="password" required>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">REGISTER</button>
+    </mat-card-content>
+  </mat-card>
+
+

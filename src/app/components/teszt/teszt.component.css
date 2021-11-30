@@ -1,0 +1,19 @@
+:host ::ng-deep app-chat-inbox .chat-messages-show-container{
+  position: absolute;
+  margin:auto;
+  right:45%;
+  top:14%;
+}
+
+:host ::ng-deep app-chat-inbox .chat-messages-create-container{
+  position: absolute;
+  top:70%;
+  right:45%;
+
+}
+
+:host ::ng-deep app-chat-inbox .hide-show-chat{
+  position: absolute;
+  top:83%;
+  right:45%;
+}

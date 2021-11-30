@@ -1,0 +1,21 @@
+<div>
+  <div class="chat-messages" >
+    <div class="chat-messages-show-container">
+      <ul class="chat-messages-show-list" id="message-list">
+      </ul>
+    </div>
+    <div class="chat-messages-create-container">
+      <input class="chat-messages-create-input" (keyup.enter)="SendMessage()" [(ngModel)]="messageInput" placeholder="Type your message here">
+      <mat-icon class="chat-messages-create-button" (click)="SendMessage()">send</mat-icon>
+      <audio id="local_audio" controls>
+      </audio>
+      <mat-icon class="chat-messages-create-button" id="record_button" (click)="recorder()">{{ this.recording ?'record_voice_over':'record_voice_over'}}</mat-icon>
+
+
+    </div>
+  </div>
+  <div class="hide-show-chat" (click)="showOrHide()">
+    <mat-icon class="chat-icon-around">chat_bubble_outline</mat-icon>
+  </div>
+</div>
+

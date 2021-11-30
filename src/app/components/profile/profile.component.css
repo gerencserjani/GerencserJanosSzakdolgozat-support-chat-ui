@@ -1,0 +1,83 @@
+.myTable{
+  margin:25px;
+  width: 55%;
+  text-align: center !important;
+}
+
+#deleteIcon{
+ font-size:32px;
+  width:15px;
+}
+
+#deleteIcon:hover{
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color:red;
+}
+
+#contactIcon:hover{
+  cursor:pointer;
+}
+
+#importantIcon:hover{
+  cursor:pointer;
+}
+
+.mat-header-cell {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.mat-cell {
+  text-align: center;
+  justify-content:center;
+}
+
+
+@media screen and (max-width: 1920px) {
+
+  #logoutBtn{
+    position: absolute;
+    top: 30px;
+    right: 180px;
+    font-weight: bold;
+    font-size: 26px;
+  }
+
+  .myTable{
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .myTable{
+    width: 50%;
+  }
+  .myTableName{
+    font-size: 9px;
+  }
+}
+/*:host ::ng-deep app-chat-inbox .chat-messages-show-container{*/
+/*  position: fixed;*/
+/*  top:4%;*/
+/*  right:20%;*/
+/*}*/
+/*:host ::ng-deep app-chat-inbox .chat-messages-create-container{*/
+/*  position: fixed;*/
+/*  top:60%;*/
+/*  right:20%;*/
+/*}*/
+
+/*:host ::ng-deep app-chat-inbox .hide-show-chat{*/
+/*  position: fixed;*/
+/*  right:20%;*/
+/*  top:75%;*/
+/*}*/
+
+/*#logoutBtn{*/
+/*  position: absolute;*/
+/*  right:7%;*/
+/*  top:7%;*/
+/*  font-size:20px;*/
+/*}*/

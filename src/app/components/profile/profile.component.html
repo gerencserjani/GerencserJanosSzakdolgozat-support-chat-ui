@@ -1,0 +1,58 @@
+<table mat-table [dataSource]="rooms" class="mat-elevation-z8 myTable">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef class="myTableName" > Room Name </th>
+    <td mat-cell *matCellDef="let element" class="myTableName"> {{element.name}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="newMessages">
+    <th mat-header-cell *matHeaderCellDef class="myTableName"> Message(s) </th>
+    <td mat-cell *matCellDef="let element" class="myTableName"> {{element.newMessages}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="participants">
+    <th mat-header-cell *matHeaderCellDef class="myTableName"> Participants </th>
+    <td mat-cell *matCellDef="let element" class="myTableName"> {{element.participants}}/</td>
+  </ng-container>
+
+  <ng-container matColumnDef="important">
+    <th mat-header-cell *matHeaderCellDef class="myTableName"> Important </th>
+    <td mat-cell *matCellDef="let element" class="myTableName">
+      <mat-icon [ngStyle]="{'color': element.isImportant? 'orange' : 'gray'}" (click)="changeStatus(element.name)" id="importantIcon">stars</mat-icon>
+  </ng-container>
+
+  <ng-container matColumnDef="helpNeeded">
+    <th mat-header-cell *matHeaderCellDef class="myTableName"> Assistance </th>
+    <td mat-cell *matCellDef="let element" class="myTableName"><mat-icon id="contactIcon" [ngStyle]="{'color': element.assistanceNeeded? 'green' : 'gray'}" (click)="changeAssistanceStatus(element.name)">contact_support</mat-icon></td>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+    <th mat-header-cell *matHeaderCellDef class="myTableName"> Created at </th>
+    <td mat-cell *matCellDef="let element" class="myTableName"> {{element.createdAt | date:'short'}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="Action1">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="joinRoom(element.name)">Join</button>
+
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="Action2">
+    <th mat-header-cell *matHeaderCellDef> </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-icon id="deleteIcon" (click)="closeRoom(element.socketId)">delete_forever</mat-icon>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+
+<app-chat-inbox [newRoomEvent]="newRoomEvent" [changeRoomEvent]="changeRoomEvent" [isSupport]="true" [username]="'support2'"></app-chat-inbox>
+
+
+<button mat-button color="primary" id="logoutBtn" (click)="logout()">Logout</button>
